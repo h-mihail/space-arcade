@@ -1,0 +1,52 @@
+import Phaser from "phaser"
+import { background } from "../assets/images"
+import {
+  beam,
+  ship1,
+  ship2,
+  ship3,
+  player,
+  powerup,
+  explosion,
+  registerAnimations,
+} from "../assets/sprites"
+import { font, fontXML } from "../assets/font"
+
+class Scene1 extends Phaser.Scene {
+  constructor() {
+    super("boot")
+  }
+  preload() {
+    this.load.bitmapFont("font", font, fontXML)
+    this.load.image("desert", background)
+
+    this.load.spritesheet("ship1", ship1, { frameWidth: 16, frameHeight: 16 })
+    this.load.spritesheet("ship2", ship2, { frameWidth: 32, frameHeight: 16 })
+    this.load.spritesheet("ship3", ship3, { frameWidth: 32, frameHeight: 32 })
+    this.load.spritesheet("player", player, {
+      frameWidth: 16,
+      frameHeight: 24,
+    })
+    this.load.spritesheet("powerup", powerup, {
+      frameWidth: 16,
+      frameHeight: 16,
+    })
+    this.load.spritesheet("explosion", explosion, {
+      frameWidth: 16,
+      frameHeight: 16,
+    })
+    this.load.spritesheet("beam", beam, {
+      frameWidth: 16,
+      frameHeight: 16,
+    })
+  }
+  create() {
+    this.add.text(20, 20, "Loading game...")
+
+    registerAnimations(this.anims)
+
+    this.scene.start("play")
+  }
+}
+
+export default Scene1
