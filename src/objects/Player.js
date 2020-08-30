@@ -84,7 +84,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     this.lives -= 1
     this.scene.score.setLives(this.lives)
-    if (this.lives === 0) this.scene.scene.start("end")
+    if (this.lives === 0) this.scene.scene.start("end", { score: this.score })
     this.downgradeBeamLevel()
 
     this.scene.time.addEvent({
