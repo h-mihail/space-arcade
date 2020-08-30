@@ -50,7 +50,19 @@ const registerAnimations = (anims) => {
   })
   anims.create({
     key: "beam_anim",
-    frames: anims.generateFrameNumbers("beam"),
+    frames: anims.generateFrameNumbers("beam", {
+      start: 2,
+      end: 3,
+    }),
+    frameRate: 10,
+    repeat: -1,
+  })
+  anims.create({
+    key: "red_beam_anim",
+    frames: anims.generateFrameNumbers("beam", {
+      start: 0,
+      end: 1,
+    }),
     frameRate: 10,
     repeat: -1,
   })

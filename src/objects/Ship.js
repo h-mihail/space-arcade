@@ -16,6 +16,16 @@ export default class Ship extends Phaser.GameObjects.Sprite {
 
     this.setInteractive()
     this.registerEvents()
+
+    this.scene.time.addEvent({
+      delay: Phaser.Math.Between(1000, 1500),
+      callback: this.shootBeam,
+      callbackScope: this,
+      loop: true,
+    })
+  }
+  shootBeam() {
+    this.scene.enemyBeams.addBeam(this.x, this.y + 16)
   }
   registerEvents() {
     this.scene.input.on("gameobjectdown", this.destroyShip)

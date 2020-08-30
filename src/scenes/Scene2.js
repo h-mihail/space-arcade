@@ -3,9 +3,9 @@ import {
   Score,
   Player,
   BeamGroup,
-  Explosion,
   EnemyGroup,
   PowerupGroup,
+  EnemyBeamGroup,
 } from "../objects"
 
 class Scene2 extends Phaser.Scene {
@@ -18,6 +18,7 @@ class Scene2 extends Phaser.Scene {
     this.score = new Score(this)
 
     this.beams = new BeamGroup(this)
+    this.enemyBeams = new EnemyBeamGroup(this)
 
     this.player = new Player(this)
 
@@ -28,6 +29,11 @@ class Scene2 extends Phaser.Scene {
 
     this.physics.add.collider(this.beams, this.powerups, (beam, powerup) => {
       beam.destroy()
+    })
+
+    this.physics.add.overlap(this.player, this.enemyBeams, (player, beam) => {
+      beam.destroy()
+      player.die()
     })
 
     this.physics.add.overlap(this.player, this.powerups, (player, powerup) => {
