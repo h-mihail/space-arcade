@@ -25,6 +25,8 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.spacebar = scene.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.SPACE
     )
+
+    this.intro()
   }
   update() {
     const speed = 3
@@ -48,6 +50,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       this.shootBeam()
     }
   }
+
   downgradeBeamLevel() {
     if (this.beamLevel > 1) this.beamLevel -= 1
   }
@@ -81,6 +84,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     this.lives -= 1
     this.scene.score.setLives(this.lives)
+    if (this.lives === 0) this.scene.scene.start("end")
     this.downgradeBeamLevel()
 
     this.scene.time.addEvent({
@@ -90,11 +94,25 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       loop: false,
     })
   }
+  intro() {
+    const { width: gameWidth, height: gameHeight } = this.scene.game.config
+
+    this.y = gameHeight - 16
+    this.scene.tweens.add({
+      targets: this,
+      y: gameHeight - 64,
+      ease: "Power1",
+      duration: 1500,
+      repeat: 0,
+      onComplete: () => {},
+      callbackScope: this,
+    })
+  }
   resetPosition() {
     const { width: gameWidth, height: gameHeight } = this.scene.game.config
 
     this.alpha = 0.5
-    this.enableBody(true, gameWidth / 2, gameHeight + 64, true, true)
+    this.enableBody(true, gameWidth / 2, gameHeight - 16, true, true)
 
     this.scene.tweens.add({
       targets: this,

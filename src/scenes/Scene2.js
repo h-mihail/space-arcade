@@ -24,9 +24,7 @@ class Scene2 extends Phaser.Scene {
     this.powerups = new PowerupGroup(this)
 
     this.enemies = new EnemyGroup(this)
-    this.enemies.addSmallEnemy()
-    this.enemies.addMediumEnemy()
-    this.enemies.addBigEnemy()
+    this.enemies.addEnemies()
 
     this.physics.add.collider(this.beams, this.powerups, (beam, powerup) => {
       beam.destroy()
