@@ -72,9 +72,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         this.scene.beams.addBeam(this.x + 4, y)
         break
       case 3:
-        this.scene.beams.addBeam(this.x - 8, y)
+        this.scene.beams.addBeam(this.x - 8, y, -15)
         this.scene.beams.addBeam(this.x, y)
-        this.scene.beams.addBeam(this.x + 8, y)
+        this.scene.beams.addBeam(this.x + 8, y, 15)
         break
     }
   }

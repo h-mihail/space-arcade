@@ -8,8 +8,6 @@ export default class Beam extends Phaser.GameObjects.Sprite {
     super(scene, x, y, "beam")
 
     scene.add.existing(this)
-    scene.physics.world.enableBody(this)
-    scene.physics.add.existing(this)
 
     this.play(`beam_anim`)
   }

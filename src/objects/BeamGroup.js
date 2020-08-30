@@ -6,10 +6,7 @@ export default class BeamGroup extends Phaser.Physics.Arcade.Group {
    * @param {Phaser.Scene} scene
    */
   constructor(scene) {
-    super(scene.physics.world, scene, {
-      velocityY: -250,
-    })
-
+    super(scene.physics.world, scene)
     scene.add.existing(this)
   }
   update() {
@@ -17,8 +14,10 @@ export default class BeamGroup extends Phaser.Physics.Arcade.Group {
       child.update()
     })
   }
-  addBeam(x, y) {
+  addBeam(x, y, angle) {
     const beam = new Beam(this.scene, x, y)
-    this.scene.beams.add(beam)
+    this.add(beam)
+    beam.body.setVelocityY(-200)
+    beam.body.setVelocityX(angle || 0)
   }
 }
