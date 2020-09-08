@@ -33,6 +33,10 @@ class Scene2 extends Phaser.Scene {
 
     this.physics.add.overlap(this.player, this.enemyBeams, (player, beam) => {
       beam.destroy()
+
+      // Make player immune after dying
+      if (player.alpha < 1) return
+
       player.die()
     })
 
