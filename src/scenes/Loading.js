@@ -45,7 +45,7 @@ class Scene1 extends Phaser.Scene {
 
     registerAnimations(this.anims)
 
-    this.scene.start("play")
+    this.scene.start("menu")
   }
 }
 

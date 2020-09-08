@@ -1,11 +1,8 @@
 import Phaser from "phaser"
 
-class End extends Phaser.Scene {
+class Menu extends Phaser.Scene {
   constructor() {
-    super("end")
-  }
-  init(data) {
-    this.score = data.score
+    super("menu")
   }
   create() {
     this.add.bitmapText(
@@ -13,12 +10,12 @@ class End extends Phaser.Scene {
       40,
       "font",
       `
-      THE END\n
+      GREETINGS, PILOT\n
       \n
-      LEVEL 1\n
-      SCORE ${this.score}\n
+      USE ARROW KEYS TO MOVE\n
+      SHOOT BY PRESSING SPACE\n
       \n
-      PRESS SPACE TO RETRY`,
+      PRESS SPACE TO START`,
       16,
       1
     )
@@ -34,4 +31,4 @@ class End extends Phaser.Scene {
   }
 }
 
-export default End
+export default Menu
