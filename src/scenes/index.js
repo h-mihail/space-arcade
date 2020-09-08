@@ -1,3 +1,3 @@
 export { default as End } from "./End"
-export { default as Scene1 } from "./Scene1"
-export { default as Scene2 } from "./Scene2"
+export { default as Loading } from "./Loading"
+export { default as Game } from "./Game"
