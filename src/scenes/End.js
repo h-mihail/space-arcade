@@ -6,30 +6,36 @@ class End extends Phaser.Scene {
   }
   init(data) {
     this.score = data.score
+    this.level = data.level
   }
   create() {
     this.add.bitmapText(
-      40,
+      44,
       40,
       "font",
       `
-      THE END\n
+      THE END
       \n
-      LEVEL 1\n
-      SCORE ${this.score}\n
+      LEVEL ${this.level}
+      SCORE ${this.score}
       \n
-      PRESS SPACE TO RETRY`,
+      PRESS ENTER TO RETRY
+      PRESS ESC TO EXIT`,
       16,
       1
     )
 
-    this.spacebar = this.input.keyboard.addKey(
-      Phaser.Input.Keyboard.KeyCodes.SPACE
+    this.enter = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.ENTER
     )
+    this.esc = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC)
   }
   update() {
-    if (Phaser.Input.Keyboard.JustDown(this.spacebar)) {
+    if (Phaser.Input.Keyboard.JustDown(this.enter)) {
       this.scene.start("play")
+    }
+    if (Phaser.Input.Keyboard.JustDown(this.esc)) {
+      this.scene.start("menu")
     }
   }
 }

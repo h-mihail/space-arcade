@@ -7,6 +7,7 @@ const config = {
   backgroundColor: "0 x 000000",
   scene: [Loading, Menu, Game, End],
   pixelArt: true,
+  zoom: 3,
   physics: {
     default: "arcade",
     arcade: {
