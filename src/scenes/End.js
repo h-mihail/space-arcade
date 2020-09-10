@@ -20,6 +20,7 @@ class End extends Phaser.Scene {
       SCORE ${this.score}
       \n
       PRESS ENTER TO RETRY
+      \n
       PRESS ESC TO EXIT`,
       16,
       1
