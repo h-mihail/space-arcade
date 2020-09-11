@@ -6,7 +6,6 @@ class End extends Phaser.Scene {
   }
   init(data) {
     this.score = data.score
-    this.level = data.level
   }
   create() {
     this.add.bitmapText(
@@ -16,7 +15,6 @@ class End extends Phaser.Scene {
       `
       THE END
       \n
-      LEVEL ${this.level}
       SCORE ${this.score}
       \n
       PRESS ENTER TO RETRY
