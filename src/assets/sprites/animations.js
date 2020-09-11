@@ -2,19 +2,19 @@ const registerAnimations = (anims) => {
   anims.create({
     key: `ship1_anim`,
     frames: anims.generateFrameNumbers("ship1"),
-    frameRate: 20,
+    frameRate: 15,
     repeat: -1,
   })
   anims.create({
     key: `ship2_anim`,
     frames: anims.generateFrameNumbers("ship2"),
-    frameRate: 20,
+    frameRate: 15,
     repeat: -1,
   })
   anims.create({
     key: `ship3_anim`,
     frames: anims.generateFrameNumbers("ship3"),
-    frameRate: 20,
+    frameRate: 15,
     repeat: -1,
   })
   anims.create({
@@ -25,44 +25,20 @@ const registerAnimations = (anims) => {
     hideOnComplete: true,
   })
   anims.create({
-    key: "red_powerup_anim",
-    frames: anims.generateFrameNumbers("powerup", {
-      start: 0,
-      end: 1,
-    }),
-    frameRate: 5,
-    repeat: -1,
-  })
-  anims.create({
-    key: "grey_powerup_anim",
-    frames: anims.generateFrameNumbers("powerup", {
-      start: 2,
-      end: 3,
-    }),
-    frameRate: 5,
-    repeat: -1,
-  })
-  anims.create({
     key: "player_anim",
     frames: anims.generateFrameNumbers("player"),
-    frameRate: 20,
+    frameRate: 15,
     repeat: -1,
   })
   anims.create({
     key: "beam_anim",
-    frames: anims.generateFrameNumbers("beam", {
-      start: 2,
-      end: 3,
-    }),
+    frames: anims.generateFrameNumbers("blue_beam"),
     frameRate: 10,
     repeat: -1,
   })
   anims.create({
     key: "red_beam_anim",
-    frames: anims.generateFrameNumbers("beam", {
-      start: 0,
-      end: 1,
-    }),
+    frames: anims.generateFrameNumbers("pink_beam"),
     frameRate: 10,
     repeat: -1,
   })

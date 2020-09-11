@@ -10,7 +10,5 @@ export default class Powerup extends Phaser.GameObjects.Sprite {
     scene.add.existing(this)
     scene.physics.world.enableBody(this)
     scene.physics.add.existing(this)
-
-    this.play(Math.random() > 0.5 ? "red_powerup_anim" : "grey_powerup_anim")
   }
 }

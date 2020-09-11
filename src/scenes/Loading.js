@@ -1,12 +1,12 @@
 import Phaser from "phaser"
-import { background } from "../assets/images"
+import { background, powerup } from "../assets/images"
 import {
-  beam,
   ship1,
   ship2,
   ship3,
   player,
-  powerup,
+  blue_beam,
+  pink_beam,
   explosion,
   registerAnimations,
 } from "../assets/sprites"
@@ -25,9 +25,9 @@ class Scene1 extends Phaser.Scene {
     this.load.spritesheet("ship3", ship3, { frameWidth: 32, frameHeight: 32 })
     this.load.spritesheet("player", player, {
       frameWidth: 16,
-      frameHeight: 24,
+      frameHeight: 16,
     })
-    this.load.spritesheet("powerup", powerup, {
+    this.load.image("powerup", powerup, {
       frameWidth: 16,
       frameHeight: 16,
     })
@@ -35,9 +35,13 @@ class Scene1 extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     })
-    this.load.spritesheet("beam", beam, {
-      frameWidth: 16,
+    this.load.spritesheet("blue_beam", blue_beam, {
+      frameWidth: 8,
       frameHeight: 16,
+    })
+    this.load.spritesheet("pink_beam", pink_beam, {
+      frameWidth: 8,
+      frameHeight: 8,
     })
   }
   create() {
