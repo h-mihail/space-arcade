@@ -11,6 +11,7 @@ export default class Explosion extends Phaser.GameObjects.Sprite {
 
     scene.add.existing(this)
     this.play("explosion_anim")
+    scene.explosionSound.play()
 
     scene.time.addEvent({
       delay: 3000,

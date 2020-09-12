@@ -14,6 +14,21 @@ class Scene2 extends Phaser.Scene {
   }
   create() {
     this.background = this.add.background("desert")
+    this.beamSound = this.sound.add("audio_beam")
+    this.explosionSound = this.sound.add("audio_explosion")
+    this.powerupSound = this.sound.add("audio_powerup")
+    this.music = this.sound.add("audio_music")
+
+    const musicConfig = {
+      mute: false,
+      volume: 1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: false,
+      delay: 0,
+    }
+    this.music.play(musicConfig)
 
     this.score = new Score(this)
 
@@ -43,6 +58,7 @@ class Scene2 extends Phaser.Scene {
     this.physics.add.overlap(this.player, this.powerups, (player, powerup) => {
       powerup.destroy()
       player.upgradeBeamLevel()
+      this.powerupSound.play()
     })
 
     this.physics.add.overlap(this.player, this.enemies, (player, enemy) => {
