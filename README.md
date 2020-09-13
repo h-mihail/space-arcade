@@ -1,4 +1,4 @@
-# Xenon Plus
+# Xenon
 
 _Scrolling shooter developed using Phaser 3 with Javascript_
 
