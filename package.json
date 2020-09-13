@@ -1,14 +1,14 @@
 {
-  "name": "first-game",
+  "name": "xenon",
   "version": "1.0.0",
-  "description": "",
+  "description": "8bit action video game",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack/dev.js",
     "start": "node server.js",
     "heroku-postbuild": "webpack -p --config webpack/prod.js"
   },
-  "author": "",
+  "author": "Mihail H",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
