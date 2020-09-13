@@ -7,3 +7,7 @@ The game can be played at https://xenon-plus.herokuapp.com/
 Use the arrow keys to move and space to shoot. The powerups upgrade your weapons.
 
 ![Screenshot](/screenshot.png)
+
+_Pixel art is home-made_
+
+_Game music by Pascal Belisle_
