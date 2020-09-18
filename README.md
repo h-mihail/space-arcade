@@ -2,7 +2,7 @@
 
 _Scrolling shooter developed using Phaser 3 with Javascript_
 
-The game can be played at https://xenon-plus.herokuapp.com/
+The game can be played at https://xenon94.herokuapp.com/
 
 Use the arrow keys to move and space to shoot. The powerups upgrade your weapons.
 
